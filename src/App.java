@@ -24,6 +24,7 @@ public class App {
             // exit을 입력받으면 종료, 아니라면 다시 num1 입력
             System.out.println("더 계산하시겠습니까?(exit 입력 시 종료)");
             String exit = sc.next();
+            calculator.removeResult();
             if (exit.equals("exit"))
                 break;
         }

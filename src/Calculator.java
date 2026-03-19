@@ -62,5 +62,9 @@ public class Calculator {
         return results.getLast();
     }
 
+    public void removeResult(){
+        results.removeFirst();
+    }
+
 
 }
