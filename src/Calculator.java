@@ -6,6 +6,13 @@ public class Calculator {
     private int num1, num2;
     private char op;
 
+    Calculator(){
+        results = new ArrayList<>();
+        this.num1 = 0;
+        this.num2 = 0;
+        this.op = '0';
+    }
+
     Calculator(int num1, int num2, char op){
         results = new ArrayList<>();
         this.num1 = num1;
@@ -26,5 +33,34 @@ public class Calculator {
         }
         return results.getLast();
     }
+
+    public void setOp(char op){
+        this.op = op;
+    }
+
+    public char getOp(){
+        return op;
+    }
+
+    public void setNum1(int num1){
+        this.num1 = num1;
+    }
+
+    public int getNum1(){
+        return num1;
+    }
+
+    public void setNum2(int num2){
+        this.num2 = num2;
+    }
+
+    public int getNum2(){
+        return num2;
+    }
+
+    public int getLastResult(){
+        return results.getLast();
+    }
+
 
 }
