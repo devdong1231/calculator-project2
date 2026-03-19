@@ -13,7 +13,7 @@ public class Calculator {
         this.op = op;
     }
 
-    public int calculate(int num1, int num2, char op){
+    public int calculate(){
         switch(op){
             case '+': results.add(num1 + num2); break;
             case '-': results.add(num1 - num2); break;
