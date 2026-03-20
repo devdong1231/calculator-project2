@@ -1,5 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class ArithmeticCalculator<T extends Number> extends Calculator<T>{
 
@@ -32,6 +33,16 @@ public class ArithmeticCalculator<T extends Number> extends Calculator<T>{
         }
         results.add(result);
         return result;
+    }
+
+    // 입력값보다 더 큰 결과가 있으면 출력하는 메서드
+    public void getBiggerResults(double input){
+        List<Double> biggerResults = results.stream().filter(num -> num > input).toList();
+
+        for(double num : biggerResults){
+            System.out.print(num + " ");
+        }
+        System.out.println();
     }
 
 
