@@ -1,34 +1,31 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Calculator {
-    protected List<Integer> results;
-    protected int num1, num2;
+public class Calculator<T extends Number> {
+    protected List<Double> results;
+    protected T num1, num2;
     protected char op;
 
     Calculator(){
         results = new ArrayList<>();
-        this.num1 = 0;
-        this.num2 = 0;
-        this.op = '0';
     }
 
-    Calculator(int num1, int num2, char op){
+    Calculator(T num1, T num2, char op){
         results = new ArrayList<>();
         this.num1 = num1;
         this.num2 = num2;
         this.op = op;
     }
 
-    public int calculate(){
+    public double calculate(){
         switch(op){
-            case '+': results.add(num1 + num2); break;
-            case '-': results.add(num1 - num2); break;
-            case '*': results.add(num1 * num2); break;
+            case '+': results.add(num1.doubleValue() + num2.doubleValue()); break;
+            case '-': results.add(num1.doubleValue() - num2.doubleValue()); break;
+            case '*': results.add(num1.doubleValue() * num2.doubleValue()); break;
             case '/':
-                if(num2 == 0)
+                if(num2.doubleValue() == 0)
                     return 0;
-                results.add(num1 / num2); break;
+                results.add(num1.doubleValue() / num2.doubleValue()); break;
             default: return 0;
         }
         return results.getLast();
@@ -42,23 +39,23 @@ public class Calculator {
         return op;
     }
 
-    public void setNum1(int num1){
+    public void setNum1(T num1){
         this.num1 = num1;
     }
 
-    public int getNum1(){
+    public T getNum1(){
         return num1;
     }
 
-    public void setNum2(int num2){
+    public void setNum2(T num2){
         this.num2 = num2;
     }
 
-    public int getNum2(){
+    public T getNum2(){
         return num2;
     }
 
-    public int getLastResult(){
+    public double getLastResult(){
         return results.getLast();
     }
 

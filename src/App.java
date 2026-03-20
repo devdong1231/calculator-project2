@@ -4,14 +4,26 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        ArithmeticCalculator calculator = new ArithmeticCalculator();
+        ArithmeticCalculator<Number> calculator = new ArithmeticCalculator<>();
 
         while (true) {
-            // 양의 정수 입력
+            // input1 입력
             System.out.print("첫 번째 정수를 입력해주세요: ");
-            calculator.setNum1(sc.nextInt());
+            String input1 = sc.next();
+            // 실수/정수 판별하기
+            if (input1.contains("."))
+                calculator.setNum1(Double.parseDouble(input1));
+            else
+                calculator.setNum1(Integer.parseInt(input1));
+
+            // input2 입력
             System.out.print("두 번째 정수를 입력해주세요: ");
-            calculator.setNum2(sc.nextInt());
+            String input2 = sc.next();
+            // 실수/정수 판별하기
+            if (input2.contains("."))
+                calculator.setNum2(Double.parseDouble(input2));
+            else
+                calculator.setNum2(Integer.parseInt(input2));
 
             // 사칙연산 기호 입력
             System.out.print("사칙연산 기호를 입력하세요(+, -, *, /): ");
