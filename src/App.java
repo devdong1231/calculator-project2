@@ -4,7 +4,7 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        Calculator calculator = new Calculator();
+        ArithmeticCalculator calculator = new ArithmeticCalculator();
 
         while (true) {
             // 양의 정수 입력

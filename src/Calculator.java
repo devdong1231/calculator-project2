@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private List<Integer> results;
-    private int num1, num2;
-    private char op;
+    protected List<Integer> results;
+    protected int num1, num2;
+    protected char op;
 
     Calculator(){
         results = new ArrayList<>();
