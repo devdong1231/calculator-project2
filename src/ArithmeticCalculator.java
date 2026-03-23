@@ -39,10 +39,10 @@ public class ArithmeticCalculator<T extends Number> extends Calculator<T>{
     public void getBiggerResults(double input){
         List<Double> biggerResults = results.stream().filter(num -> num > input).toList();
 
-        for(double num : biggerResults){
-            System.out.print(num + " ");
-        }
-        System.out.println();
+        if(biggerResults.isEmpty())
+            System.out.println("결과가 존재하지 않습니다.");
+        else
+            System.out.println(biggerResults);
     }
 
 

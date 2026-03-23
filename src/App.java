@@ -73,12 +73,6 @@ public class App {
                 // 최종 결과 계산
                 calculator.calculate();
                 System.out.println(calculator.getNum1() + " " + calculator.getOp() + " " + calculator.getNum2() + " = " + calculator.getLastResult());
-
-                // exit을 입력받으면 종료, 아니라면 다시 num1 입력
-                System.out.println("더 계산하시겠습니까?(exit 입력 시 종료)");
-                String exit = sc.next();
-                if (exit.equals("exit"))
-                    break;
             }
             // -------------------------------
 
@@ -99,7 +93,7 @@ public class App {
 
             else if(choice.equals("exit")){
                 System.out.println("프로그램을 종료합니다.");
-                return;
+                break;
             }
 
             // 4. ---------- 메뉴 입력 예외 처리 ----------
