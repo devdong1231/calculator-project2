@@ -35,7 +35,6 @@ public class ArithmeticCalculator<T extends Number> extends Calculator<T>{
 
     // 입력값보다 더 큰 결과가 있으면 출력하는 메서드
     public void getBiggerResults(double input){
-        // stream, 람다를 활용해 input보다 큰 수를 biggerResults에 넣기
         List<Double> biggerResults = results.stream().filter(num -> num > input).toList();
 
         if(biggerResults.isEmpty())

@@ -6,7 +6,6 @@ public class App {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
 
-        // 계산기 객체 생성
         ArithmeticCalculator<Number> calculator = new ArithmeticCalculator<>();
 
         while (true) {
@@ -19,13 +18,12 @@ public class App {
 
             // 1. ---------- 계산하기 ----------
             if (choice.equals("1")) {
-                // input1 입력
                 while (true) {
-                    System.out.print("첫 번째 정수를 입력해주세요: ");
+                    System.out.print("첫 번째 정수를 입력해주세요: "); // 첫 번째 정수
                     String input1 = sc.next();
+
                     try { // 숫자가 아닐 경우 예외 처리
-                        // 실수/정수 판별하기
-                        if (input1.contains(".")) {
+                        if (input1.contains(".")) { // 실수/정수 판별
                             calculator.setNum1(Double.parseDouble(input1));
                         } else {
                             calculator.setNum1(Integer.parseInt(input1));
@@ -38,13 +36,12 @@ public class App {
                 }
 
 
-                // input2 입력
                 while (true) {
-                    System.out.print("두 번째 정수를 입력해주세요: ");
+                    System.out.print("두 번째 정수를 입력해주세요: "); // 두 번째 정수
                     String input2 = sc.next();
+
                     try { // 숫자가 아닐 경우 예외 처리
-                        // 실수/정수 판별하기
-                        if (input2.contains("."))
+                        if (input2.contains(".")) // 실수/정수 판별
                             calculator.setNum2(Double.parseDouble(input2));
                         else
                             calculator.setNum2(Integer.parseInt(input2));
@@ -54,7 +51,6 @@ public class App {
                     }
                     break;
                 }
-
 
                 // 사칙연산 기호 입력
                 while (true) {
