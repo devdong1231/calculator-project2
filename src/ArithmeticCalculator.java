@@ -17,13 +17,13 @@ public class ArithmeticCalculator<T extends Number> extends Calculator<T>{
         num1 = this.num1.doubleValue();
         num2 = this.num2.doubleValue();
 
-        if (op == OperatorType.PLUS.getSymbol()) // +
+        if (op == OperatorType.PLUS.getSymbol()) // "+"
             result = num1 + num2;
-        else if (op == OperatorType.MINUS.getSymbol()) // -
+        else if (op == OperatorType.MINUS.getSymbol()) // "-"
             result = num1 - num2;
-        else if (op == OperatorType.MULTIPLY.getSymbol()) // *
+        else if (op == OperatorType.MULTIPLY.getSymbol()) // "*"
             result = num1 * num2;
-        else if (op == OperatorType.DIVIDE.getSymbol()){ // /
+        else if (op == OperatorType.DIVIDE.getSymbol()){ // "/"
             if(num2 == 0){ // 0으로 나누려고 시도할 때 0 반환
                 return 0;
             }
