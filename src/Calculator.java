@@ -2,9 +2,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator<T extends Number> {
-    protected List<Double> results;
-    protected T num1, num2;
-    protected char op;
+    protected List<Double> results; // 결과
+    protected T num1, num2; // 첫 번째 수, 두 번째 수
+    protected char op; // 연산자
 
     Calculator(){
         results = new ArrayList<>();

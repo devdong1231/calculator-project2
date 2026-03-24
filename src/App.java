@@ -5,6 +5,8 @@ public class App {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
+
+        // 계산기 객체 생성
         ArithmeticCalculator<Number> calculator = new ArithmeticCalculator<>();
 
         while (true) {
@@ -58,7 +60,7 @@ public class App {
                 while (true) {
                     System.out.print("사칙연산 기호를 입력하세요(+, -, *, /): ");
                     char op = sc.next().charAt(0);
-                    try { // 사칙 연산 기호가 아닐 경우 예외 발생
+                    try { // 사칙 연산 기호가 아닐 경우 예외 처리
                         if (!(op == '+' || op == '-' || op == '*' || op == '/')) {
                             throw new InputMismatchException("사칙연산 기호를 입력해주세요");
                         }
@@ -70,7 +72,7 @@ public class App {
                     break;
                 }
 
-                // 최종 결과 계산
+                // 최종 결과 계산, 출력
                 calculator.calculate();
                 System.out.println(calculator.getNum1() + " " + calculator.getOp() + " " + calculator.getNum2() + " = " + calculator.getLastResult());
             }
@@ -87,14 +89,15 @@ public class App {
                         System.out.println("숫자를 입력해주세요.");
                     }
                 }
-
             }
             // --------------------------------
 
+            // 3. ---------- 종료 ----------
             else if(choice.equals("exit")){
                 System.out.println("프로그램을 종료합니다.");
                 break;
             }
+            // -----------------------------
 
             // 4. ---------- 메뉴 입력 예외 처리 ----------
             else {
